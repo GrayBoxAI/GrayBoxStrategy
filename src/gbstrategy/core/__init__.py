@@ -10,6 +10,8 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+from ._demo import DemoDriver, DemoExp, LossFunc
+
 from ._Interface import Interface
 
 from ._Strategy import Strategy, StrategyMachineFactory

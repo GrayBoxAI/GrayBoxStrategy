@@ -18,7 +18,6 @@ from gbstrategy.components.triggers import ReceiveHyperparams, ReceiveRandomSear
 from gbstrategy.core import Strategy
 
 
-
 class RandomSearchStrategy(Strategy):
     # Capitalized components are built in in the base class `Strategy
     _psm_states = ['Init', 'StrategyHyperparamsSet', 'HyperparamsSet', 'End']
