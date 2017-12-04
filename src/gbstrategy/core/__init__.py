@@ -10,8 +10,10 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-from ._demo import DemoDriver, DemoExp, LossFunc
+from ._demo import DemoDriver, DemoExp
 
 from ._Interface import Interface
+
+from ._mock_loss import ExampleLoss1, LossFunc
 
 from ._Strategy import Strategy, StrategyMachineFactory

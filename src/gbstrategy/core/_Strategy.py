@@ -50,14 +50,14 @@ class StrategyMachineFactory(object):
 
         logEnterState_withdata = partial(self.logger.logEnterState,
                                          self.strategy.get_state_data)
-        self._psm = Machine(model=self.strategy,
-                            states=self.strategy._psm_states,
-                            after_state_change=logEnterState_withdata,
-                            initial=state,
-                            send_event=True,
-                            transitions=tmp_transition,
-                            # ignore_invalid_triggers=True,
-                           )
+        self._psm = PersistentStateMachine(model=self.strategy,
+                                           states=self.strategy._psm_states,
+                                           after_state_change=logEnterState_withdata,
+                                           initial=state,
+                                           send_event=True,
+                                           transitions=tmp_transition,
+                                           # ignore_invalid_triggers=True,
+                                          )
         return self._psm
 
 
