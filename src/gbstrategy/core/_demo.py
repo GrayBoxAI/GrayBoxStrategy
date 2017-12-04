@@ -70,22 +70,3 @@ class DemoExp(object):
         self._curr_epoch += 1
         loss = self.lossfunc.epoch_loss(self._curr_epoch, self.hyperparams)
         interface.upload_training_loss(self.exp_id, self._curr_epoch, self.lossfunc.loss_name, loss)
-
-
-class LossFunc(object):
-    dim = 0
-    loss_name = "someLossName"
-
-    @classmethod
-    def epoch_loss(cls, epoch, hyperparams):
-        final_loss = cls._final_loss(hyperparams)
-        epoch_loss = cls._interpolation(final_loss, epoch)
-        return epoch_loss
-
-    @classmethod
-    def _final_loss(cls, hyperparams):
-        raise NotImplementedError
-
-    @classmethod
-    def _interpolation(cls, final_loss, epoch):
-        raise NotImplementedError
